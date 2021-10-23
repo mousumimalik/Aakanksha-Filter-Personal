@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Employees</title>
+    <!-- Icons -->
+        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- styles/css -->
+        <link rel="stylesheet" href="explore.css">
+
+</head>
+<body>
+
+    <div class="explore-container">
+        <div class="search-section">
+            <header>
+                <h1>Services</h1>
+                <div class="filter-box">
+                    <button onclick="myFun()" class="services-dropbtn">Select Sevice</button>
+                    <div id="services-myDropdown" class="services-dropdown-content">
+                        <input type="text" placeholder="Search" id="services-myInput" onkeyup="filterFun()" />
+                        <div class="dropdown-options">
+                            <li class="btn active" data-filter="all" onclick="myFun()"> ALL </li>
+                            <li class="btn" data-filter="carpenter" onclick="myFun()"> CARPENTER </li>
+                            <li class="btn" data-filter="electrician" onclick="myFun()"> ELECTRICIAN </li>
+                            <li class="btn" data-filter="laundry" onclick="myFun()"> LAUNDRY </li>
+                            <li class="btn" data-filter="cook" onclick="myFun()"> COOK </li>
+                            <li class="btn" data-filter="homecare" onclick="myFun()"> HOME CARE </li>
+                            <li class="btn" data-filter="cleaner" onclick="myFun()"> BABYSITTER </li>
+                            <li class="btn" data-filter="technician" onclick="myFun()"> TECHNICIAN </li>
+                            <li class="btn" data-filter="touristguide" onclick="myFun()"> TOURIST GUIDE </li>
+                            <li class="btn" data-filter="security" onclick="myFun()"> SECURITY GUARD </li>
+                            <li class="btn" data-filter="painter" onclick="myFun()"> PAINTER </li>
+                            <li class="btn" data-filter="legalservices" onclick="myFun()"> LEGAL SERVICES </li>
+                            <li class="btn" data-filter="eventplanner" onclick="myFun()"> EVENT PLANNER </li>
+                            <li class="btn" data-filter="interiordesign" onclick="myFun()"> INTERIOR DESIGN </li>
+                            <li class="btn" data-filter="construction&enginner" onclick="myFun()"> CONSTRUCTION & ENGINEER </li>
+                            <li class="btn" data-filter="financial&accountiong" onclick="myFun()"> FINANCIAL & ACCOUNTIONG </li>
+                            <li class="btn" data-filter="houseshifting" onclick="myFun()"> HOUSE SHIFTING </li>
+                            <li class="btn" data-filter="mechanic" onclick="myFun()"> MECHANIC </li>
+                            <li class="btn" data-filter="repairman" onclick="myFun()"> REPAIRMAN </li>
+                            <li class="btn" data-filter="housecleaner" onclick="myFun()"> HOUSE CLEANER </li>
+                            <li class="btn" data-filter="plumber" onclick="myFun()"> PLUMBER </li>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="price-range">
+                <h2> Price </h2>
+                <input type="range" id="myRange" class="slider" min="100" max="1000" value="500">
+                <p> Value: <span id="value"></span> </p>
+            </div>
+
+            <div class="location">                 
+                <h2>Location</h2>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Select City</button>
+                    <div id="myDropdown" class="dropdown-content show">
+                        <input type="text" placeholder="Search" id="myInput" onkeyup="filterFunction()">
+                       
+                            <li>Andheri</li>
+                            <li>Bandra</li>
+                            <li>Bhubaneshwar</li>
+                            <li>Borivali</li>
+                            <li>Cuttack</li>
+                            <li>Dahisar</li>
+                            <li>Eachur Munderi</li>
+                            <li>Firozobad</li>
+                            <li>Goregaon</li>
+                            <li>Guwahati</li>
+                            <li>Haldia</li>
+                            <li>Itwa, Uttar Pradesh</li>
+                            <li>Jogeshwari</li>
+                            <li>Juhu</li>
+                            <li>Kochi</li>
+                            <li>Kozhikode</li>
+                            <li>Lakhanpur, Jammu And Kashmir</li>
+                            <li>Maharastra</li>
+                            <li>Manglaur Nagar Palika Parishad</li>
+                            <li>New Delhi</li>
+                            <li>Noida</li>
+                            <li>Nagaon</li>
+                            <li>Odaipatti</li>
+                            <li>Other</li>
+                            <li>Puri</li>
+                            <li>Palasha</li>
+                            <li>Rourkela</li>
+                            <li>Shahjahanabad</li>
+                            <li>Siri</li>
+                            <li>Shahjahanabad</li>
+                            <li>Thiruvananthapuram</li>
+                            <li>Tughlqabad</li>
+                            <li>Udaipur, Rajasthan</li>
+                            <li>Vadali, Andhra Pradesh</li>
+                            <li>Washi(Osmanabad)</li>
+                            <li>Yenne Hole Marne</li>
+                            <li>Zaheerabad</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="emp-available">
+                <h2>Employee Available</h2>
+                <div class="choice-emp">
+                    <label class="employees" for="employee">Choose needed employee</label>
+                    <select id="emp">
+                        <option class="employe" value="employee">1</option>
+                        <option class="employe" value="employee">2</option>
+                        <option class="employe" value="employee">3</option>
+                        <option class="employe" value="employee">4</option>
+                        <option class="employe" value="employee">5</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="filtered-section">
+            <main>
+                <div class="slide-container">
+                    <section class="container" id="employees">
+                        <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Steve Johns </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Kai Parker </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Paul Johns </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee electrician">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Luis Merry </p>
+                                <h2> ELECTRICIAN </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee laundry">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Ashok Mehra </p>
+                                <h2> LAUNDRY </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cook">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Samantha Kaur </p>
+                                <h2> COOK </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cook">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Samantha Kaur </p>
+                                <h2> COOK </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee homecare">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Tony Stark </p>
+                                <h2> HOME CARE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cleaner">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Rebekha Mikelson </p>
+                                <h2> HOUSE CLEANER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee babysitter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Klause Mikelson </p>
+                                <h2> BABYSITTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee technician">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Damon Salvator </p>
+                                <h2> TECHNICIAN </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee touristguide">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Megas </p>
+                                <h2> TOURIST GUIDE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee touristguide">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Cardi Megas </p>
+                                <h2> TOURIST GUIDE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>             
+                        <div class="employee security">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Salvator </p>
+                                <h2> SECURITY </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>   
+                        <div class="employee painter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Salvator </p>
+                                <h2> PAINTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>                                             
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="explore.js"></script>
+
+</body>
+</html>
